@@ -16,7 +16,7 @@ const List = ({ people, removeItem }) => {
               style={{ display: people.length > 1 ? "block" : "none" }}
               onClick={() => removeItem(id)}
             >
-              Clear
+              Remove
             </button>
           </article>
         );

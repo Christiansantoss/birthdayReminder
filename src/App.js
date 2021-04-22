@@ -19,7 +19,7 @@ function App() {
       <main>
         <section className="container">
           <h3> No more birthdays! 🎉🎂</h3>
-          <button onClick={reset}> reset</button>
+          <button onClick={reset}> Past Birthdays</button>
         </section>
       </main>
     );
