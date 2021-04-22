@@ -4,15 +4,34 @@ import List from "./List";
 
 function App() {
   const [people, setPeople] = useState(data);
+
   const removeItem = (id) => {
     let newPeople = people.filter((person) => person.id !== id);
     setPeople(newPeople);
   };
 
+  const reset = () => {
+    setPeople(data);
+  };
+
+  if (people.length === 0) {
+    return (
+      <main>
+        <section className="container">
+          <h3> No more birthdays! 🎉🎂</h3>
+          <button onClick={reset}> reset</button>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main>
       <section className="container">
-        <h3>{people.length} birthdays today!</h3>
+        <h3>
+          {people.length}
+          {people.length > 1 ? " Birthdays Today" : " Birthday Today"} 🎉🎂
+        </h3>
         <List people={people} removeItem={removeItem} />
         <button onClick={() => setPeople([])}> Clear Birthdays </button>
       </section>
