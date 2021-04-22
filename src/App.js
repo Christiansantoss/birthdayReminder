@@ -33,7 +33,9 @@ function App() {
           {people.length > 1 ? " Birthdays Today" : " Birthday Today"} 🎉🎂
         </h3>
         <List people={people} removeItem={removeItem} />
-        <button onClick={() => setPeople([])}> Clear Birthdays </button>
+        <button onClick={() => setPeople([])}>
+          {people.length > 1 ? " Clear Birthdays" : "Clear Birthday"}
+        </button>
       </section>
     </main>
   );

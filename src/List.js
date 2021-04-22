@@ -12,7 +12,12 @@ const List = ({ people, removeItem }) => {
               <h4>{name}</h4>
               <p>{age}</p>
             </div>
-            <button onClick={() => removeItem(id)}>Clear</button>
+            <button
+              style={{ display: people.length > 1 ? "block" : "none" }}
+              onClick={() => removeItem(id)}
+            >
+              Clear
+            </button>
           </article>
         );
       })}
